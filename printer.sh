@@ -35,6 +35,14 @@ print_information() {
             echo "                $clouds %"
         ;;
 
+        "shower rain")
+            echo "  _'/''.-.       $desc"
+            echo "   ,\_(   ).     $temp °C"
+            echo "    /(___(__)    ↘ $wind km/h"
+            echo "      ' ' ' '    $hum %"
+            echo "     ' ' ' '     $clouds %"
+        ;;
+
     esac
 
 }
