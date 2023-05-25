@@ -46,10 +46,18 @@ print_information() {
 
         "shower rain")
             echo "  _'/''.-.       $desc"
-            echo "   ,\_(   ).     $temp °C"
-            echo "    /(___(__)    ↘ $wind km/h"
-            echo "      ' ' ' '    $hum %"
-            echo "     ' ' ' '     $clouds %"
+            echo "   ,\_(   ).     $temp ${GREEN}°C${NC}"
+            echo "    /(___(__)    ↘ $wind ${GREEN}km/h${NC}"
+            echo "      ' ' ' '    $hum ${GREEN}%${NC}"
+            echo "     ' ' ' '     $clouds ${GREEN}%${NC}"
+        ;;
+
+        "rain")
+            echo "      .--.        $desc"
+            echo "   .-(    ).      $temp ${GREEN}°C${NC}"
+            echo "  (___.__)__)     ↘ $wind ${GREEN}km/h${NC}"
+            echo "  ' ' ' ' ' '     $hum ${GREEN}%${NC}"
+            echo "   ' ' ' ' '      $clouds ${GREEN}%${NC}"
         ;;
 
     esac
