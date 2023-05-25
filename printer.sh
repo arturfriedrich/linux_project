@@ -16,8 +16,6 @@ print_information() {
     local wind=$4
     local clouds=$5
 
-    echo $desc
-
     # Drawing ASCII art based on the desciption
     case $desc in
         "clear sky")
