@@ -45,20 +45,27 @@ print_information() {
         ;;
 
         "shower rain")
-            echo "  _'/''.-.       $desc"
-            echo "   ,\_(   ).     $temp ${GREEN}°C${NC}"
-            echo "    /(___(__)    ↘ $wind ${GREEN}km/h${NC}"
-            echo "      ' ' ' '    $hum ${GREEN}%${NC}"
-            echo "     ' ' ' '     $clouds ${GREEN}%${NC}"
+            echo "${YELLOW}  _'/''${NC}.-.       $desc"
+            echo "${YELLOW}   ,\_${NC}(   ).     $temp ${GREEN}°C${NC}"
+            echo "${YELLOW}    /${NC}(___(__)    ↘ $wind ${GREEN}km/h${NC}"
+            echo "${BLUE}      ' ' ' '${NC}    $hum ${GREEN}%${NC}"
+            echo "${BLUE}     ' ' ' '${NC}     $clouds ${GREEN}%${NC}"
         ;;
 
         "rain")
-            echo "      .--.        $desc"
-            echo "   .-(    ).      $temp ${GREEN}°C${NC}"
-            echo "  (___.__)__)     ↘ $wind ${GREEN}km/h${NC}"
-            echo "  ' ' ' ' ' '     $hum ${GREEN}%${NC}"
-            echo "   ' ' ' ' '      $clouds ${GREEN}%${NC}"
+            echo "      .--.      $desc"
+            echo "   .-(    ).    $temp ${GREEN}°C${NC}"
+            echo "  (___.__)__)   ↘ $wind ${GREEN}km/h${NC}"
+            echo "${BLUE}  ' ' ' ' ' '${NC}   $hum ${GREEN}%${NC}"
+            echo "${BLUE}   ' ' ' ' '${NC}    $clouds ${GREEN}%${NC}"
         ;;
+
+        *)
+            echo "${YELLOW}             ${NC} $desc"
+            echo "${YELLOW}             ${NC} $temp ${GREEN}°C${NC}"
+            echo "${YELLOW}             ${NC} ↘ $wind ${GREEN}km/h${NC}"
+            echo "${YELLOW}             ${NC} $hum ${GREEN}%${NC}"
+            echo "${YELLOW}             ${NC} $clouds ${GREEN}%${NC}"
 
     esac
 
