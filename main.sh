@@ -22,4 +22,6 @@ clouds=$(echo "$weather_data" | grep -o '"all":[^,]*' | cut -d ":" -f 2 | tr -d 
 # convert temperature from Kelvin to Celsius
 temperature=$(echo "scale=2; ${temperature} - 273.15" | bc)
 
+echo "Weather information for" $location
+
 print_information "$description" $temperature $humidity, $wind_speed $clouds
