@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source printer.sh
+
 # set OpenWeatherMap API key
 apikey=$(cat apikey.txt)
 API_KEY=$apikey
@@ -19,17 +21,5 @@ clouds=$(echo "$weather_data" | grep -o '"all":[^,]*' | cut -d ":" -f 2 | tr -d 
 
 # convert temperature from Kelvin to Celsius
 temperature=$(echo "scale=2; ${temperature} - 273.15" | bc)
-echo $temperature
 
-# display weather information to user
-if (( $(echo "$temperature > 1" | bc -l) )); then
-  echo "Kurva hideg van bassza meg"
-else
-  echo "Temperature in Sopron: ${temperature} °C"
-fi
-
-echo " "
-echo "Description: ${description}"
-echo "Humidity: ${humidity}%"
-echo "Wind speed: ${wind_speed}"
-echo "Clouds: ${clouds}%"
+print_information "$description" $temperature $humidity, $wind_speed $clouds
