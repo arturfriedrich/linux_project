@@ -20,6 +20,7 @@ print_information() {
     # Drawing ASCII art based on the desciption
     case $desc in
         "clear sky")
+            echo $date
             echo "${YELLOW}   \   /     ${NC} $desc"
             echo "${YELLOW}    .-.      ${NC} $temp ${GREEN}°C${NC}"
             echo "${YELLOW} ― (   ) ―   ${NC} ↘ $wind ${GREEN}km/h${NC}"
@@ -28,6 +29,7 @@ print_information() {
         ;;
 
         "broken clouds")
+            echo $date
             echo "               $desc"
             echo "      .--.     $temp ${GREEN}°C${NC}"
             echo "   .-(    ).   ↘ $wind ${GREEN}km/h${NC}"
@@ -36,6 +38,7 @@ print_information() {
         ;;
 
         "partly cloudy" | "few clouds" | "overcast clouds")
+            echo $date
             echo "${YELLOW}     \  /${NC}       $desc"
             echo "${YELLOW}   _ /''${NC}${WHITE}.-.${NC}     $temp ${GREEN}°C${NC}"
             echo "${YELLOW}     \_${NC}${WHITE}(   ).${NC}   ↘ $wind ${GREEN}km/h${NC}"
@@ -44,6 +47,7 @@ print_information() {
         ;;
 
         "shower rain")
+            echo $date
             echo "${YELLOW}  _'/''${NC}.-.       $desc"
             echo "${YELLOW}   ,\_${NC}(   ).     $temp ${GREEN}°C${NC}"
             echo "${YELLOW}    /${NC}(___(__)    ↘ $wind ${GREEN}km/h${NC}"
@@ -52,6 +56,7 @@ print_information() {
         ;;
 
         "rain")
+            echo $date
             echo "      .--.      $desc"
             echo "   .-(    ).    $temp ${GREEN}°C${NC}"
             echo "  (___.__)__)   ↘ $wind ${GREEN}km/h${NC}"
@@ -60,6 +65,7 @@ print_information() {
         ;;
 
         *)
+            echo $date
             echo "${YELLOW}             ${NC} $desc"
             echo "${YELLOW}             ${NC} $temp ${GREEN}°C${NC}"
             echo "${YELLOW}             ${NC} ↘ $wind ${GREEN}km/h${NC}"
