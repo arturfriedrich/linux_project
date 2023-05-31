@@ -15,6 +15,7 @@ print_information() {
     local hum=$3
     local wind=$4
     local clouds=$5
+    local date=$6
 
     # Drawing ASCII art based on the desciption
     case $desc in
