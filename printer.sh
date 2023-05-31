@@ -34,7 +34,7 @@ print_information() {
             echo "               $clouds ${GREEN}%${NC}"
         ;;
 
-        "partly cloudy" | "few clouds")
+        "partly cloudy" | "few clouds" | "overcast clouds")
             echo "${YELLOW}     \  /${NC}       $desc"
             echo "${YELLOW}   _ /''${NC}${WHITE}.-.${NC}     $temp ${GREEN}°C${NC}"
             echo "${YELLOW}     \_${NC}${WHITE}(   ).${NC}   ↘ $wind ${GREEN}km/h${NC}"
