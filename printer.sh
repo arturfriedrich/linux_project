@@ -26,6 +26,7 @@ print_information() {
             echo "${YELLOW} ― (   ) ―   ${NC} ↘ $wind ${GREEN}km/h${NC}"
             echo "${YELLOW}    '-'      ${NC} $hum ${GREEN}%${NC}"
             echo "${YELLOW}   /   \     ${NC} $clouds ${GREEN}%${NC}"
+            echo ""
         ;;
 
         "broken clouds")
@@ -35,6 +36,7 @@ print_information() {
             echo "   .-(    ).   ↘ $wind ${GREEN}km/h${NC}"
             echo "  (___.__)__)  $hum ${GREEN}%${NC}"
             echo "               $clouds ${GREEN}%${NC}"
+            echo ""
         ;;
 
         "partly cloudy" | "few clouds" | "overcast clouds")
@@ -44,6 +46,7 @@ print_information() {
             echo "${YELLOW}     \_${NC}${WHITE}(   ).${NC}   ↘ $wind ${GREEN}km/h${NC}"
             echo "${YELLOW}     /${NC}${WHITE}(___(__)${NC}  $hum ${GREEN}%${NC}"
             echo "                $clouds ${GREEN}%${NC}"
+            echo ""
         ;;
 
         "shower rain")
@@ -53,6 +56,7 @@ print_information() {
             echo "${YELLOW}    /${NC}(___(__)    ↘ $wind ${GREEN}km/h${NC}"
             echo "${BLUE}      ' ' ' '${NC}    $hum ${GREEN}%${NC}"
             echo "${BLUE}     ' ' ' '${NC}     $clouds ${GREEN}%${NC}"
+            echo ""
         ;;
 
         "rain")
@@ -62,6 +66,7 @@ print_information() {
             echo "  (___.__)__)   ↘ $wind ${GREEN}km/h${NC}"
             echo "${BLUE}  ' ' ' ' ' '${NC}   $hum ${GREEN}%${NC}"
             echo "${BLUE}   ' ' ' ' '${NC}    $clouds ${GREEN}%${NC}"
+            echo ""
         ;;
 
         *)
@@ -71,6 +76,7 @@ print_information() {
             echo "${YELLOW}             ${NC} ↘ $wind ${GREEN}km/h${NC}"
             echo "${YELLOW}             ${NC} $hum ${GREEN}%${NC}"
             echo "${YELLOW}             ${NC} $clouds ${GREEN}%${NC}"
+            echo ""
 
     esac
 
