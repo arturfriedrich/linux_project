@@ -39,7 +39,7 @@ print_information() {
             echo ""
         ;;
 
-        "partly cloudy" | "few clouds" | "overcast clouds")
+        "partly cloudy" | "few clouds" | "overcast clouds" | "scattered clouds")
             echo $date
             echo "${YELLOW}     \  /${NC}       $desc"
             echo "${YELLOW}   _ /''${NC}${WHITE}.-.${NC}     $temp ${GREEN}°C${NC}"
@@ -59,7 +59,7 @@ print_information() {
             echo ""
         ;;
 
-        "rain")
+        "rain" | "light rain")
             echo $date
             echo "      .--.      $desc"
             echo "   .-(    ).    $temp ${GREEN}°C${NC}"
