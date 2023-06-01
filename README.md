@@ -1,35 +1,37 @@
 # Terminál alapú időjárás előrejelző
 
-Ez a projekt a Széchenyi István Egyetem Linux ismeretek (GKNB_MSTM028) tárgyra készült beadandó feladatom.
-
-A feladat célja egy egyszerű feladatot vagy problémát megoldó linux alapú program írása, amivel elsajátíthatjuk a shell programozás, valamint a linux operációs rendszer alapjait.
+Ez a projekt a Széchenyi István Egyetem Linux ismeretek (GKNB_MSTM028) tárgy beadandó feladata.
 
 ## A program célja
 
-Egy olyan egyszerű és könnyen használható terminál alapú időjárás-előrejelző program létrehozása, ami képes helyadatok segítségével kijelezni az aktuális és a várható időjárási adatokat. Az adatokat az OpenWeatherMap API segítségével kapja meg felhasználó. Kapcsolók segítségével további beállítások érhetőek el, mint például a lokáció megváltoztatása, részletesebb adatok kijelzése, megjelenítendő napok száma, mértékegységek. Az adatok mellett karakteres rajzok segítik az információk egyszerűbb feldolgozását a felhasználó számára.
+A program célja egy egyszerű és könnyen használható terminál alapú időjárás-előrejelző program létrehozása, amely képes helyadatok alapján megjeleníteni az aktuális és a várható időjárási adatokat. Az adatokat az OpenWeatherMap API segítségével kapja meg a felhasználó. A program lehetővé teszi további beállításokat, mint például a lokáció megváltoztatása, részletesebb adatok kijelzése, megjelenítendő napok száma és mértékegységek beállítása. A program a karakteres rajzok segítségével egyszerűbbé teszi az információk feldolgozását a felhasználó számára.
 
-## Felhasználói dokumentáció
+## Telepítés és használat
 
-### Telepítés és használat
-1. a programot a ./main.sh parancs segítségével futtathatja
-2. amennyiben először használja a programot, meg kell adnia az API kulcsát, amit a [ezen](https://openweathermap.org/api) az oldalon tud generálni bejelentkezés után
-3. adjon meg egy várost
-4. két lehetőségből választhat: c - jelenlegi időjárás, f - 5 napos előrejelzés
+1. A program futtatásához használja a `./main.sh` parancsot.
+2. Ha először használja a programot, meg kell adnia az API kulcsot, amelyet [itt](https://openweathermap.org/api) generálhat bejelentkezés után.
+3. Adjon meg egy várost.
+4. Választhat a következő lehetőségek közül: "c" - jelenlegi időjárás, "f" - 5 napos előrejelzés.
 
-### Információk
-A képen látható, hogy melyik információ mit reprezentál:
+## Információk
 
-<img width="600" alt="image" src="https://github.com/arturfriedrich/linux_project/assets/67378210/7f0d13ef-93bb-4156-aa71-b970a1df6af8">
+Az alábbi képen látható, hogy az egyes információk mit jelentenek:
 
-A programot macOS alatt az 5.2.12 verzió alatt teszteltem, linuxon pedig az 5.1.4
+![Információk](https://github.com/arturfriedrich/linux_project/assets/67378210/7f0d13ef-93bb-4156-aa71-b970a1df6af8)
+
+A programot macOS 5.2.12 verzió alatt és Linuxon 5.1.4 verzió alatt teszteltem.
 
 ## Fejlesztői dokumentáció
 
-A fejlesztés során a cél a komponensekre bontás volt, a jobb átláthatóság és a fejlesztés könnyítésének érdekében, ezért a legtöbb részegységet egy-egy külön fájlba helyeztem.
+A fejlesztés során a programot komponensekre bontottam a jobb átláthatóság és a fejlesztés megkönnyítése érdekében. A következő fájlok tartalmazzák a különböző részegységeket:
 
-![image](https://github.com/arturfriedrich/linux_project/assets/67378210/96d212d3-1d67-4f14-9f80-a18b5e1161f2)
+- `main.sh`: Ez a fájl tartalmazza a főbb részeket, például az API kulcs bekérését.
+- `current_weather.sh`: Ez a fájl felelős az aktuális időjárás lekérdezéséért.
+- `forecast.sh`: Ez a fájl felelős az időjárás előrejelzéséért.
+- `printer.sh`: Ez a fájl felelős az időjárás kijelzéséért a konzolon.
 
-A main.sh alapvetően csak a legfontosabb részeknek ad helyet, például az API kulcs bekérésének:
+Az API kulcs bekérésének példa kódrészlete az `main.sh` fájlban található:
+
 ```bash
 # Set OpenWeatherMap API key, write your own API key here
 api_key_file="apikeyfile.txt"
