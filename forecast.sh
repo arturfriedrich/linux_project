@@ -21,11 +21,20 @@ get_weather_forecast() {
     clouds=$(echo "$forecast_data" | grep -o '"all":[^,]*' | cut -d ":" -f 2 | tr -d '}' | tr '\n' '|')
 
     # Function to convert Unix timestamp to readable date
-    convert_unix_to_date() {
-        local timestamp=$1
-        local formatted_date=$(date -r "$timestamp" +"%Y-%m-%d %H:%M:%S")
-        echo "$formatted_date"
-    }
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        convert_unix_to_date() {
+            local timestamp=$1
+            local formatted_date=$(date -r "$timestamp" +"%Y-%m-%d %H:%M:%S")
+            echo "$formatted_date"
+        }
+    else
+        convert_unix_to_date() {
+            local formatted_date=$(awk -v ts="$timestamp" 'BEGIN { print strftime("%Y-%m-%d %H:%M:%S", ts) }')
+            echo "$formatted_date"
+        }
+        
+    fi
+    
 
     IFS='|' read -r -a dates_arr <<< "$dates"
     IFS='|' read -r -a temperature_arr <<< "$temperature"
