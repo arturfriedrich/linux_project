@@ -21,7 +21,24 @@ A képen látható, hogy melyik információ mit reprezentál:
 
 <img width="600" alt="image" src="https://github.com/arturfriedrich/linux_project/assets/67378210/7f0d13ef-93bb-4156-aa71-b970a1df6af8">
 
+A programot macOS alatt az 5.2.12 verzió alatt teszteltem, linuxon pedig az 5.1.4
 
+## Fejlesztői dokumentáció
 
-macos - bash 5.2.12
-linux - 5.1.4
+A fejlesztés során a cél a komponensekre bontás volt, a jobb átláthatóság és a fejlesztés könnyítésének érdekében, ezért a legtöbb részegységet egy-egy külön fájlba helyeztem.
+
+![image](https://github.com/arturfriedrich/linux_project/assets/67378210/96d212d3-1d67-4f14-9f80-a18b5e1161f2)
+
+A main.sh alapvetően csak a legfontosabb részeknek ad helyet, például az API kulcs bekérésének:
+```bash
+# Check if the apikey file already exists
+if [[ ! -e $api_key_file ]]; then
+    # Prompt the user to enter an API key
+    read -p "Enter your API key: " api_key
+
+    # Write the API key to the file
+    echo "$api_key" > "$api_key_file"
+
+    echo "API key has been saved to $api_key_file."
+fi
+```
