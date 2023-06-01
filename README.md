@@ -71,3 +71,11 @@ else
     echo "Invalid input!"
 fi
 ```
+
+A jelenlegi időjárának (current_weather.sh) valamint az időjárás előrejelzésnek (furecast.sh) külön fájlt hoztam létre, mivel nagyban különbözik az API válasza, így egyszerűbb volt ezeket így feldolgozni.
+```bash
+# Call OpenWeatherMap API and retrieve weather data
+weather_data=$(curl -s "http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}")
+```
+
+A printer.sh egyszerűen csak kijelzi a kapott értékek alapján az időjárást. Igyekeztem minél több lehetőséget megadni a rajzoknál, viszont lehetnek olyan időjárási körülmények, melyekhez nem tartozik kép, ezt később könnyen pótolni lehet.
