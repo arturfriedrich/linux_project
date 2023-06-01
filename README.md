@@ -18,6 +18,7 @@ Egy olyan egyszerű és könnyen használható terminál alapú időjárás-elő
 
 ### Információk
 A képen látható, hogy melyik információ mit reprezentál:
+
 <img width="600" alt="image" src="https://github.com/arturfriedrich/linux_project/assets/67378210/7f0d13ef-93bb-4156-aa71-b970a1df6af8">
 
 
