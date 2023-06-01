@@ -86,6 +86,7 @@ print_information() {
         case $desc in
         "clear sky")
             echo -n $date
+            echo ""
             echo -e "${YELLOW}   \   /     ${NC} $desc"
             echo -e "${YELLOW}    .-.      ${NC} $temp ${GREEN}°C${NC}"
             echo -e "${YELLOW} ― (   ) ―   ${NC} ↘ $wind ${GREEN}km/h${NC}"
@@ -96,6 +97,7 @@ print_information() {
 
         "broken clouds")
             echo -n $date
+            echo ""
             echo -e "               $desc"
             echo -e "      .--.     $temp ${GREEN}°C${NC}"
             echo -e "   .-(    ).   ↘ $wind ${GREEN}km/h${NC}"
@@ -106,6 +108,7 @@ print_information() {
 
         "partly cloudy" | "few clouds" | "overcast clouds" | "scattered clouds")
             echo -n $date
+            echo ""
             echo -e "${YELLOW}     \  /${NC}       $desc"
             echo -e "${YELLOW}   _ /''${NC}${WHITE}.-.${NC}     $temp ${GREEN}°C${NC}"
             echo -e "${YELLOW}     \_${NC}${WHITE}(   ).${NC}   ↘ $wind ${GREEN}km/h${NC}"
@@ -116,6 +119,7 @@ print_information() {
 
         "shower rain")
             echo -n $date
+            echo ""
             echo -e "${YELLOW}  _'/''${NC}.-.       $desc"
             echo -e "${YELLOW}   ,\_${NC}(   ).     $temp ${GREEN}°C${NC}"
             echo -e "${YELLOW}    /${NC}(___(__)    ↘ $wind ${GREEN}km/h${NC}"
@@ -124,8 +128,9 @@ print_information() {
             echo ""
         ;;
 
-        "rain" | "light rain")
+        "rain" | "light rain" | "moderate rain")
             echo -n $date
+            echo ""
             echo -e "      .--.      $desc"
             echo -e "   .-(    ).    $temp ${GREEN}°C${NC}"
             echo -e "  (___.__)__)   ↘ $wind ${GREEN}km/h${NC}"
@@ -136,6 +141,7 @@ print_information() {
 
         *)
             echo -n $date
+            echo ""
             echo -e "${YELLOW}             ${NC} $desc"
             echo -e "${YELLOW}             ${NC} $temp ${GREEN}°C${NC}"
             echo -e "${YELLOW}             ${NC} ↘ $wind ${GREEN}km/h${NC}"
