@@ -6,7 +6,20 @@ source current_weather.sh
 source forecast.sh
 
 # Set OpenWeatherMap API key, write your own API key here
-apikey=$(cat apikey.txt)
+api_key_file="apikeyfile.txt"
+
+# Check if the apikey file already exists
+if [[ ! -e $api_key_file ]]; then
+    # Prompt the user to enter an API key
+    read -p "Enter your API key: " api_key
+
+    # Write the API key to the file
+    echo "$api_key" > "$api_key_file"
+
+    echo "API key has been saved to $api_key_file."
+fi
+
+apikey=$(cat apikeyfile.txt)
 API_KEY=$apikey
 
 # Prompt user to enter a location
