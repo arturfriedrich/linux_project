@@ -17,8 +17,10 @@ print_information() {
     local clouds=$5
     local date=$6
 
-    # Drawing ASCII art based on the desciption
-    case $desc in
+    # Check the operating system
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        case $desc in
         "clear sky")
             echo $date
             echo "${YELLOW}   \   /     ${NC} $desc"
@@ -59,7 +61,7 @@ print_information() {
             echo ""
         ;;
 
-        "rain" | "light rain")
+        "rain" | "light rain" | "moderate rain")
             echo $date
             echo "      .--.      $desc"
             echo "   .-(    ).    $temp ${GREEN}°C${NC}"
@@ -79,5 +81,69 @@ print_information() {
             echo ""
 
     esac
+    else
+        # Linux
+        case $desc in
+        "clear sky")
+            echo -n $date
+            echo -e "${YELLOW}   \   /     ${NC} $desc"
+            echo -e "${YELLOW}    .-.      ${NC} $temp ${GREEN}°C${NC}"
+            echo -e "${YELLOW} ― (   ) ―   ${NC} ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "${YELLOW}    '-'      ${NC} $hum ${GREEN}%${NC}"
+            echo -e "${YELLOW}   /   \     ${NC} $clouds ${GREEN}%${NC}"
+            echo ""
+        ;;
+
+        "broken clouds")
+            echo -n $date
+            echo -e "               $desc"
+            echo -e "      .--.     $temp ${GREEN}°C${NC}"
+            echo -e "   .-(    ).   ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "  (___.__)__)  $hum ${GREEN}%${NC}"
+            echo -e "               $clouds ${GREEN}%${NC}"
+            echo ""
+        ;;
+
+        "partly cloudy" | "few clouds" | "overcast clouds" | "scattered clouds")
+            echo -n $date
+            echo -e "${YELLOW}     \  /${NC}       $desc"
+            echo -e "${YELLOW}   _ /''${NC}${WHITE}.-.${NC}     $temp ${GREEN}°C${NC}"
+            echo -e "${YELLOW}     \_${NC}${WHITE}(   ).${NC}   ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "${YELLOW}     /${NC}${WHITE}(___(__)${NC}  $hum ${GREEN}%${NC}"
+            echo -e "                $clouds ${GREEN}%${NC}"
+            echo ""
+        ;;
+
+        "shower rain")
+            echo -n $date
+            echo -e "${YELLOW}  _'/''${NC}.-.       $desc"
+            echo -e "${YELLOW}   ,\_${NC}(   ).     $temp ${GREEN}°C${NC}"
+            echo -e "${YELLOW}    /${NC}(___(__)    ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "${BLUE}      ' ' ' '${NC}    $hum ${GREEN}%${NC}"
+            echo -e "${BLUE}     ' ' ' '${NC}     $clouds ${GREEN}%${NC}"
+            echo ""
+        ;;
+
+        "rain" | "light rain")
+            echo -n $date
+            echo -e "      .--.      $desc"
+            echo -e "   .-(    ).    $temp ${GREEN}°C${NC}"
+            echo -e "  (___.__)__)   ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "${BLUE}  ' ' ' ' ' '${NC}   $hum ${GREEN}%${NC}"
+            echo -e "${BLUE}   ' ' ' ' '${NC}    $clouds ${GREEN}%${NC}"
+            echo ""
+        ;;
+
+        *)
+            echo -n $date
+            echo -e "${YELLOW}             ${NC} $desc"
+            echo -e "${YELLOW}             ${NC} $temp ${GREEN}°C${NC}"
+            echo -e "${YELLOW}             ${NC} ↘ $wind ${GREEN}km/h${NC}"
+            echo -e "${YELLOW}             ${NC} $hum ${GREEN}%${NC}"
+            echo -e "${YELLOW}             ${NC} $clouds ${GREEN}%${NC}"
+            echo ""
+
+    esac
+    fi
 
 }
