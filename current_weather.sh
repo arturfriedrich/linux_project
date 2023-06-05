@@ -3,7 +3,7 @@
 source printer.sh
 
 # Set OpenWeatherMap API key, write your own API key here
-apikey=$(cat apikey.txt)
+apikey=$(cat apikeyfile.txt)
 API_KEY=$apikey
 
 # Define function to retrieve weather information
