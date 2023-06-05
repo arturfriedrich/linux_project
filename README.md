@@ -17,7 +17,7 @@ A program célja egy egyszerű és könnyen használható terminál alapú időj
 
 Az alábbi képen látható, hogy az egyes információk mit jelentenek:
 
-![Információk](https://github.com/arturfriedrich/linux_project/assets/67378210/7f0d13ef-93bb-4156-aa71-b970a1df6af8)
+<img width="615" alt="image" src="https://github.com/arturfriedrich/linux_project/assets/67378210/d58ad88c-bfe3-44ee-b48a-a2eec14c9f45">
 
 A programot macOS 5.2.12 verzió alatt és Linuxon 5.1.4 verzió alatt teszteltem.
 
