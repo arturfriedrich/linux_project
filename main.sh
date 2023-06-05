@@ -31,10 +31,10 @@ read -p "Do you want to display the current weather or the forecast for 5 days: 
 # Check the value of display_mode and take appropriate action
 if [ "$display_mode" = "c" ]; then
     # Display current weather information
-    get_weather_information "$location"
+    get_weather_information "$location" "$apikey"
 elif [ "$display_mode" = "f" ]; then
     # Display weather forecast for 5 days
-    get_weather_forecast "$location"
+    get_weather_forecast "$location" "$apikey"
 else
     echo "Invalid input!"
 fi

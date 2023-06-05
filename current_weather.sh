@@ -2,13 +2,14 @@
 
 source printer.sh
 
-# Set OpenWeatherMap API key, write your own API key here
-apikey=$(cat apikeyfile.txt)
-API_KEY=$apikey
-
 # Define function to retrieve weather information
 get_weather_information() {
     local location=$1
+    local apikey=$2
+
+    # Set OpenWeatherMap API key, write your own API key here
+    apikey=$(cat apikeyfile.txt)
+    API_KEY=$apikey
 
     # Call OpenWeatherMap API and retrieve weather data
     weather_data=$(curl -s "http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}")
